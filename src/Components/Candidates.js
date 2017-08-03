@@ -2,10 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Candidate from './Candidate'
 
-const Candidates = ({ candidates, addVote }) => (
+const Candidates = ({ candidates, onVote, removeCandidate }) => (
   <div>
     {candidates.map(candidate => (
-      <Candidate key={candidate.id} {...candidate} onVote{() => addVote(candidate.id)} />
+      // <div key={candidate.id} className="candidate">
+      //   {candidate.name} - {candidate.votes} - {candidate.id}
+      //   <button onClick={() => onVote(candidate.id)}>
+      //     Vote
+      //   </button>
+      // </div>
+
+      <Candidate
+        key={candidate.id}
+        {...candidate}
+        onVote={() => onVote(candidate.id)}
+        remove={() => removeCandidate(candidate.id)}/>
     ))}
   </div>
 )

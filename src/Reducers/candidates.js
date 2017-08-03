@@ -20,13 +20,16 @@ const candidates = (state = initialCandidates.candidates, action) => {
         ...state,
         {
           id: action.id,
-          name: action.name
+          name: action.name,
+          votes: 0
         }
       ]
     case 'ADD_VOTE':
       return state.map(candidate =>
-        (candidate.id === action.id) ? {...candidate, votes: candidate.votes++} : candidate
+        (candidate.id === action.id) ? {...candidate, votes: candidate.votes + 1} : candidate
       )
+    case 'REMOVE_CANDIDATE':
+      return state.filter(candidate => candidate.id !== action.id)
     default:
       return state;
   }

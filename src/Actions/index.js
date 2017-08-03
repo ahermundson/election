@@ -14,3 +14,10 @@ export const addVote = id => {
     id
   }
 }
+
+export const removeCandidate = id => {
+  return {
+    type: 'REMOVE_CANDIDATE',
+    id
+  }
+}

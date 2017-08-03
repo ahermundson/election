@@ -5,7 +5,8 @@ const Candidate = ({ onVote, remove, name, votes}) => (
   <div
     className='candidate'>
     {name} - {votes}
-    <button onClick={onVote}>
+    <button
+      onClick={onVote}>
       Vote
     </button>
     <button onClick={remove}>
