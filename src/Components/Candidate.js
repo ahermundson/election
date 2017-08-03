@@ -1,17 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Candidate = ({ onClick, name}) => {
+const Candidate = ({ onVote, remove, name, votes}) => (
   <div
-    onClick{onClick}
     className='candidate'>
-    {name}
+    {name} - {votes}
+    <button onClick={onVote}>
+      Vote
+    </button>
+    <button onClick={remove}>
+      Delete
+    </button>
   </div>
-}
+)
 
 Candidate.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired
+  onVote: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  votes: PropTypes.number.isRequired
 }
 
 export default Candidate
