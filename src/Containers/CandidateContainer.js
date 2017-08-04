@@ -4,7 +4,7 @@ import  Candidates  from '../Components/Candidates'
 
 const mapStateToProps = state => {
   return {
-    candidates: state.candidates
+    candidates: state.candidates.sort((a,b) => a.id - b.id)
   }
 }
 

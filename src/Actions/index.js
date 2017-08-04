@@ -1,4 +1,4 @@
-let candidateID = 0
+let candidateID = 2
 
 export const addCandidate = name => {
   return {

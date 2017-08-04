@@ -1,9 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+const CandidateDiv = styled.div`
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
 
 const Candidate = ({ onVote, remove, name, votes}) => (
-  <div
-    className='candidate'>
+  <CandidateDiv>
     {name} - {votes}
     <button
       onClick={onVote}>
@@ -12,7 +23,7 @@ const Candidate = ({ onVote, remove, name, votes}) => (
     <button onClick={remove}>
       Delete
     </button>
-  </div>
+  </CandidateDiv>
 )
 
 Candidate.propTypes = {

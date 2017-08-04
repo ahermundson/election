@@ -2,12 +2,12 @@ const initialCandidates = {
   candidates: [
     {
       name: 'Alex',
-      id: 1000,
+      id: 0,
       votes: 0
     },
     {
       name: 'Katie',
-      id: 1001,
+      id: 1,
       votes: 0
     }
   ]
